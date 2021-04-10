@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="Admin")
 public class Admin {
-
+    @Id
     @Column(name="id_user")
     private Integer id;
 

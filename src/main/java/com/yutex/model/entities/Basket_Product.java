@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.beans.ConstructorProperties;
+import java.math.BigInteger;
 
 @Data
 @NoArgsConstructor

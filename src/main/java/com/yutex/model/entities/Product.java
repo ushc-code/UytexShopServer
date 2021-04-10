@@ -1,5 +1,6 @@
 package com.yutex.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,10 +10,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name="Product")
+//@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Product {
-    @SequenceGenerator(name="productIdSeq", sequenceName = "product_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "productIdSeq")
     @Id
+    @SequenceGenerator(name="productIdSeq", sequenceName = "product_id_seq", allocationSize = 1, initialValue = 20)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "productIdSeq")//GenerationType.AUTO)//SEQUENCE,generator = "productIdSeq")
     @Column(name="id_product")
     private Integer id;
 

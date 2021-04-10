@@ -9,10 +9,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name="Basket")
-public class Backet {
+public class Basket {
     @Id
     @SequenceGenerator(name="basketIdSeq", sequenceName = "basket_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "backetIdSeq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "basketIdSeq")
     @Column(name="id_basket")
     private Integer id_basket;
 

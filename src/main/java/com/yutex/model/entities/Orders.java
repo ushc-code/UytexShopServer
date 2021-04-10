@@ -1,9 +1,11 @@
 package com.yutex.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -11,7 +13,7 @@ import javax.persistence.*;
 @Table(name="Orders")
 public class Orders {
     @Id
-    @SequenceGenerator(name="orderIdSeq", sequenceName = "order_id_seq", allocationSize = 1)
+    @SequenceGenerator(name="orderIdSeq", sequenceName = "order_id_seq", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "orderIdSeq")
     @Column(name = "id_order")
     private Integer id_order;
@@ -22,7 +24,8 @@ public class Orders {
     @Column(name="status")
     private String status;
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     @Column(name="order_date")
-    private String date;
+    private Date date;
 
 }

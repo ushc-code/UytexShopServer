@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table(name="Client")
 public class Client {
 
-
+    @Id
     @Column(name="id_user")
     private Integer id;
 }
