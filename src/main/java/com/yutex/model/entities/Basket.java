@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -19,8 +20,4 @@ public class Basket {
 
     @Column(name="id_user")
     private Integer id_user;
-
-
-    @Column(name="id_basket_product")
-    private Integer id_basket_product;
 }

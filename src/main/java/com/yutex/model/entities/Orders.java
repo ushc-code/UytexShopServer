@@ -28,4 +28,6 @@ public class Orders {
     @Column(name="order_date")
     private Date date;
 
+    @Column(name = "price_order")
+    private Float price_order;
 }

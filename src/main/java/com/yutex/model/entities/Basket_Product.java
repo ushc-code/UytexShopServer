@@ -13,15 +13,18 @@ import java.math.BigInteger;
 @Table(name="Basket_Product")
 public class Basket_Product {
 
-    @Id
-    @SequenceGenerator(name="basketProductSeq", sequenceName = "basketProd_id_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "basketProductSeq")
-    @Column(name = "id_basket_product")
-    private Integer id_basket_product;
+    @EmbeddedId()
+    private BasketProdKey id_basket_product;
 
+    @ManyToOne()
+    @MapsId("idProduct")
+    @JoinColumn(name="id_product")
+    private Product product;
 
-    @Column(name="id_product")
-    private Integer id_product;
+    @ManyToOne()
+    @MapsId("idBasket")
+    @JoinColumn(name="id_basket")
+    private Basket basket;
 
     @Column(name = "count_products")
     private Integer count;

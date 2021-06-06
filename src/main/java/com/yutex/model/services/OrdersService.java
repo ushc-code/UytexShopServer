@@ -20,6 +20,7 @@ public class OrdersService {
     public  void save(Orders orders){
         ordersRepository.save(orders);
     }
+    /*public List<Orders> getByBasketId(Integer id_basket){return ordersRepository.getALlByid_basket(id_basket);}*/
     public List<Orders> getAll(){
         return ordersRepository.findAll();
     }
@@ -35,4 +36,7 @@ public class OrdersService {
    public  void updateById(String status, Integer id_order){
         ordersRepository.update(status, id_order);
    }
+  public String getStatus(Integer  id){
+        return ordersRepository.getStatus(id);
+  }
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -35,5 +36,6 @@ public class Product {
 
     @Column(name="cost_model")
     private Float cost;
+
 
 }

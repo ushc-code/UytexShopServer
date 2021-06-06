@@ -32,4 +32,5 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 
     )
     List<Object[]> join();
+    List<Product> findAll();
 }

@@ -2,7 +2,6 @@ package com.yutex.controllers;
 
 import com.yutex.model.dto.StatsDto;
 import com.yutex.model.entities.Product;
-import com.yutex.model.mapper.BasketMapper;
 import com.yutex.model.mapper.StatsMapper;
 import com.yutex.model.services.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+@CrossOrigin(origins="http://localhost:4200")
 @RestController()
 @RequiredArgsConstructor
 public class ProductController {
@@ -28,6 +27,7 @@ public class ProductController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
+
 
     @GetMapping(value = "/products")
     public ResponseEntity<List<Product>> read(){
@@ -73,13 +73,13 @@ public class ProductController {
                 new ResponseEntity<>(products, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-    @GetMapping(value = "products/statisticOrder")
+    /*@GetMapping(value = "products/statisticOrder")
     public  ResponseEntity<List<StatsDto>> statisticOrder(){
-        List<StatsDto> statsDtos = statsMapper.mapAllToDto(productService.joinStats());
+        // List<StatsDto> statsDtos = statsMapper.mapAllToDto(productService.joinStats());
 
-        return !(statsDtos == null || statsDtos.isEmpty()) ?
+        *//*return !(statsDtos == null || statsDtos.isEmpty()) ?
                 new ResponseEntity<>(statsDtos,HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);*//*
 
-    }
+    }*/
 }
