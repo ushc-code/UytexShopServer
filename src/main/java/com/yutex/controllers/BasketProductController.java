@@ -101,7 +101,7 @@ public class BasketProductController {
         int id = 0;
         for(Basket_Product basket: baskets){
             statsByCountDtos.add(new StatsByCountDto(id,basket.getProduct(),basket.getCount()));
-            id++;
+            //id++;
         }
 
         return statsByCountDtos.size() != 0 ? new ResponseEntity<>(statsByCountDtos, HttpStatus.OK)

@@ -33,13 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
         return new BCryptPasswordEncoder(10);
     }
 
-    /*@Bean
-    public AuthProvider provider(){return  new AuthProvider(); }
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth){
-        auth.authenticationProvider(provider());
-    }*/
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -53,13 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
                 .permitAll()
                 .logoutUrl("/logout").logoutSuccessUrl("/catalog")
                 .invalidateHttpSession(true);
-        /*http.authorizeRequests()
-        .antMatchers("/","/login","/registration").permitAll();
-        //.anyRequest().authenticated();
-        *//*.and()
-        .formLogin().loginPage("/pages/login").defaultSuccessUrl("/pages/catalog/")
-        .and()
-        .logout().logoutUrl("/logout").logoutSuccessUrl("/").permitAll();*/
+
     }
 
     @Override
